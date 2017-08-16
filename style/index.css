@@ -1,0 +1,236 @@
+.container {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 90%;
+    width: 90%;
+    background-image: url("../images/roads.png");
+    background-repeat: no-repeat;
+    background-size: 50%, 50%;
+    background-position: center;
+}
+
+.planet {
+    /* display: none; */
+    position: absolute;
+    top: 47%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 250px;
+    height: 250px;
+    background-image: url("../images/planet_focus.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+    z-index: 100;
+    border-radius: 50%;
+}
+
+.planet>div {
+    width: 100%;
+    height: 100%;
+    display: none;
+    background-image: url("../images/planet_focus.png");
+}
+
+.planet.focus {
+    background-image: url("../images/planet_focus.gif");
+}
+
+.planet_run {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.orbit {
+    border-radius: 50%;
+    position: absolute;
+    transform-style: preserve-3d !important;
+}
+
+@keyframes orbitrotate {
+    0% {
+        transform: rotateX(59deg) rotateY(-15deg) rotateZ(0deg);
+    }
+    100% {
+        transform: rotateX(59deg) rotateY(-15deg) rotateZ(-360deg);
+    }
+}
+
+.orbit.planetone {
+    height: 470px;
+    width: 477px;
+    position: absolute;
+    left: calc(50% - 240px);
+    top: calc(50% - 257px);
+    z-index: 5;
+    animation: orbitrotate 10s linear 0s normal none infinite;
+}
+
+.planetone {
+    transform: rotateX(59deg) rotateY(-13deg) rotateZ(0deg);
+}
+
+.planetone .ball {
+    background-image: url(../images/qiu1.png);
+    animation-duration: 3s;
+}
+
+.orbit.planettwo {
+    /* background-color: rgba(0,0,0,0.5); */
+    height: 694px;
+    width: 622px;
+    position: absolute;
+    left: calc(50% - 301px);
+    top: calc(50% - 354px);
+    z-index: 4;
+    animation: orbitrotatez 10s linear 0s normal none infinite;
+}
+
+.planettwo {
+    transform: rotateX(59deg) rotateY(-13deg) rotateZ(-21deg);
+}
+
+@keyframes orbitrotatez {
+    0% {
+        transform: rotateX(59deg) rotateY(-13deg) rotateZ(0deg);
+    }
+    100% {
+        transform: rotateX(59deg) rotateY(-13deg) rotateZ(-360deg);
+    }
+}
+
+.planettwo .ball {
+    background-image: url(../images/qiu2.png);
+    animation-duration: 3s;
+}
+
+.planetone .splanet {
+    position: absolute;
+    transform-style: preserve-3d !important;
+    transform: rotateX(-90deg) rotateY(0deg);
+    -ms-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    height: 30px;
+    width: 30px;
+    left: 253px;
+    bottom: -8px;
+    z-index: 6;
+}
+
+.planettwo .splanet {
+    position: absolute;
+    transform-style: preserve-3d !important;
+    transform: rotateX(-90deg) rotateY(0deg);
+    -ms-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    height: 40px;
+    width: 40px;
+    left: 185px;
+    top: 35px;
+    z-index: 6;
+}
+
+.splanet .ball {
+    background-size: 100% 100%;
+    transform-origin: 50% 50% 0;
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    transform: rotateX(-90deg) rotateY(0deg);
+    animation: planetrotateOne 10s linear 0s normal none infinite;
+}
+
+@keyframes planetrotateOne {
+    0% {
+        transform: rotateX(0deg) rotateY(0deg);
+    }
+    100% {
+        transform: rotateX(0deg) rotateY(-360deg);
+    }
+}
+
+.pipe {
+    background-image: url(../images/line.png);
+    width: 182px;
+    height: 130px;
+    position: absolute;
+    z-index: 9;
+}
+
+.partone {
+    left: calc(50% - 174px);
+    top: calc(50% - 192px);
+    transform: rotateX(-60deg) rotateY(2deg) rotateZ(93deg);
+}
+
+#mercury {
+    top: calc(35% - 84px);
+    left: calc(50% - 156px);
+    width: 180px;
+    height: 180px;
+}
+
+#venus {
+    top: 29%;
+    left: 66%;
+    width: 180px;
+    height: 180px;
+}
+
+#earth {
+    top: 59%;
+    left: 66%;
+    width: 240px;
+    height: 240px;
+}
+
+#mars {
+    top: 72%;
+    left: 44%;
+    width: 160px;
+    height: 160px;
+}
+
+.parttwo {
+    top: calc(30% - -6px);
+    left: calc(50% + 47px);
+    transform: rotateX(-17deg) rotateY(-2deg) rotateZ(180deg);
+}
+
+#sun {
+    width: 220px;
+    height: 220px;
+}
+
+.partthree {
+    top: 46%;
+    left: 52%;
+    transform: rotateX(-152deg) rotateY(44deg) rotateZ(180deg);
+}
+
+.partfour {
+    top: 53%;
+    left: 41%;
+    transform: rotateX(-137deg) rotateY(-38deg) rotateZ(103deg);
+}
+
+#jupiter {
+    left: 31%;
+    top: 55%;
+    width: 210px;
+    height: 210px;
+}
+
+.partfive {
+    top: 44%;
+    left: 35%;
+    transform: rotateX(0deg) rotateY(5deg) rotateZ(200deg);
+}

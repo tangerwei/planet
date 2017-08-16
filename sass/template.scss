@@ -1,0 +1,72 @@
+$color1:#00C89D;
+$color2:#0663A7;
+$color3:#F1BE00;
+$back-window:rgba(12, 25, 45, 0.7);
+@mixin window($height:299px, $width:310px) {
+    height: $height;
+    width: $width;
+    background: rgba(12, 25, 45, 0.7); // background:linear-gradient(135deg, transparent 1.5em, $back-window 0) top left,
+    // linear-gradient(225deg, transparent 0, $back-window 0) top right,
+    // linear-gradient(-45deg, transparent 1.5em, $back-window 0) bottom right,
+    // linear-gradient(45deg, transparent 0, $back-window 0) bottom left;
+    // background-size: 50% 50%;
+    // background-repeat: no-repeat;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+@mixin position-x-y-center($height, $width) {
+    position: absolute;
+    top: calc(50% - $height);
+    left: calc(50% - $width);
+}
+
+body {
+    background-color: #000;
+}
+
+div.body {
+    position: absolute;
+    width: 1440px;
+    height: 791px;
+    top: calc(50% - 395px);
+    left: calc(50% - 720px);
+    background-image: url("../images/body_bg.jpg");
+    background-repeat: no-repeat;
+}
+
+.header {
+    text-align: center;
+}
+
+@mixin chart($top,$left){
+    @include window();
+    &>#chart1 {
+        height: 100%;
+        width: 100%;
+    }
+    position: absolute;
+    top: $top;
+    left: $left;
+    &>.title {
+        position: absolute;
+        top: 11px;
+        left: 27px;
+        font-size: 19px;
+        color: #CDECFF;
+        font-weight: bold;
+    }
+}
+
+.chart1 {
+    @include chart(10%,3%);
+}
+.chart2 {
+    @include chart(53%,3%);
+}
+.chart3 {
+    @include chart(10%,77%);
+}
+.chart4 {
+    @include chart(53%,77%);
+}

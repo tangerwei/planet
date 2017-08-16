@@ -1,0 +1,96 @@
+body {
+  background-color: #000; }
+
+div.body {
+  position: absolute;
+  width: 1440px;
+  height: 791px;
+  top: calc(50% - 395px);
+  left: calc(50% - 720px);
+  background-image: url("../images/body_bg.jpg");
+  background-repeat: no-repeat; }
+
+.header {
+  text-align: center; }
+
+.chart1 {
+  height: 299px;
+  width: 310px;
+  background: rgba(12, 25, 45, 0.7);
+  padding: 10px;
+  box-sizing: border-box;
+  position: absolute;
+  top: 10%;
+  left: 3%; }
+  .chart1 > #chart1 {
+    height: 100%;
+    width: 100%; }
+  .chart1 > .title {
+    position: absolute;
+    top: 11px;
+    left: 27px;
+    font-size: 19px;
+    color: #CDECFF;
+    font-weight: bold; }
+
+.chart2 {
+  height: 299px;
+  width: 310px;
+  background: rgba(12, 25, 45, 0.7);
+  padding: 10px;
+  box-sizing: border-box;
+  position: absolute;
+  top: 53%;
+  left: 3%; }
+  .chart2 > #chart1 {
+    height: 100%;
+    width: 100%; }
+  .chart2 > .title {
+    position: absolute;
+    top: 11px;
+    left: 27px;
+    font-size: 19px;
+    color: #CDECFF;
+    font-weight: bold; }
+
+.chart3 {
+  height: 299px;
+  width: 310px;
+  background: rgba(12, 25, 45, 0.7);
+  padding: 10px;
+  box-sizing: border-box;
+  position: absolute;
+  top: 10%;
+  left: 77%; }
+  .chart3 > #chart1 {
+    height: 100%;
+    width: 100%; }
+  .chart3 > .title {
+    position: absolute;
+    top: 11px;
+    left: 27px;
+    font-size: 19px;
+    color: #CDECFF;
+    font-weight: bold; }
+
+.chart4 {
+  height: 299px;
+  width: 310px;
+  background: rgba(12, 25, 45, 0.7);
+  padding: 10px;
+  box-sizing: border-box;
+  position: absolute;
+  top: 53%;
+  left: 77%; }
+  .chart4 > #chart1 {
+    height: 100%;
+    width: 100%; }
+  .chart4 > .title {
+    position: absolute;
+    top: 11px;
+    left: 27px;
+    font-size: 19px;
+    color: #CDECFF;
+    font-weight: bold; }
+
+/*# sourceMappingURL=template.css.map */
