@@ -1,18 +1,16 @@
 $color1:#00C89D;
 $color2:#0663A7;
 $color3:#F1BE00;
+$test:#41B8F4;
 $back-window:rgba(12, 25, 45, 0.7);
-@mixin window($height:299px, $width:310px) {
+@mixin window($height:319px, $width:310px) {
     height: $height;
     width: $width;
-    background: rgba(12, 25, 45, 0.7); // background:linear-gradient(135deg, transparent 1.5em, $back-window 0) top left,
-    // linear-gradient(225deg, transparent 0, $back-window 0) top right,
-    // linear-gradient(-45deg, transparent 1.5em, $back-window 0) bottom right,
-    // linear-gradient(45deg, transparent 0, $back-window 0) bottom left;
-    // background-size: 50% 50%;
-    // background-repeat: no-repeat;
-    padding: 10px;
+    padding: 20px 10px 20px 10px;
     box-sizing: border-box;
+    background-image: url(../images/Rectangle3.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
 }
 
 @mixin position-x-y-center($height, $width) {
@@ -39,9 +37,10 @@ div.body {
     text-align: center;
 }
 
-@mixin chart($top,$left){
+@mixin chart($top,
+$left) {
     @include window();
-    &>#chart1 {
+    &>div.chart {
         height: 100%;
         width: 100%;
     }
@@ -50,8 +49,8 @@ div.body {
     left: $left;
     &>.title {
         position: absolute;
-        top: 11px;
-        left: 27px;
+        top: 26px;
+        left: 33px;
         font-size: 19px;
         color: #CDECFF;
         font-weight: bold;
@@ -59,14 +58,90 @@ div.body {
 }
 
 .chart1 {
-    @include chart(10%,3%);
+    @include chart(10%,
+    3%);
 }
+
 .chart2 {
-    @include chart(53%,3%);
+    @include chart(53%,
+    3%);
 }
+
 .chart3 {
-    @include chart(10%,77%);
+    @include chart(10%,
+    77%);
 }
+
 .chart4 {
-    @include chart(53%,77%);
+    @include chart(53%,
+    77%);
+}
+
+@mixin scrollbar {
+    &::-webkit-scrollbar {
+        width: 8px;
+        height: 14px;
+        background-color: rgba(85, 103, 126, 0.5);
+        border-radius: 10px;
+    }
+    &::-webkit-scrollbar-thumb{
+        background-color: rgb(85,103,126);
+        border-radius: 10px;
+    }
+}
+
+@mixin table($height,
+$width) {
+    table-layout: fixed;
+    width: $width;
+    height: $height;
+    tr {
+        height: 37px;
+        box-sizing: border-box;
+        font-size: 16px;
+        font-weight: bold;
+        color: #fff;
+        background-color: rgba(24, 46, 70, 0.8);
+    }
+    &>thead>tr {
+        &>th {
+            width: 34%;
+            text-align: center;
+        }
+    }
+    &>tbody {
+        height: 185px;
+        width: 276px;
+        overflow: auto;
+        display: block;
+        @include scrollbar();
+        &>tr {
+            width: 100%;
+            height: 32px;
+            line-height: 32px;
+            display: flex;
+            margin: 10px 0px;
+            td {
+                flex: 1;
+                height: 32px;
+                text-align: center;
+                float: left;
+                overflow: hidden;
+                padding: 0;
+            }
+        }
+    }
+}
+
+#chart4 {
+    height: 229px;
+}
+
+#chart4table {
+    margin-top: 30px;
+    margin-left: calc(50% - 138px);
+    @include table(222px,
+    276px);
+    border-spacing: 0;
+    padding-top: 10px;
 }

@@ -14,83 +14,139 @@ div.body {
   text-align: center; }
 
 .chart1 {
-  height: 299px;
+  height: 319px;
   width: 310px;
-  background: rgba(12, 25, 45, 0.7);
-  padding: 10px;
+  padding: 20px 10px 20px 10px;
   box-sizing: border-box;
+  background-image: url(../images/Rectangle3.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
   position: absolute;
   top: 10%;
   left: 3%; }
-  .chart1 > #chart1 {
+  .chart1 > div.chart {
     height: 100%;
     width: 100%; }
   .chart1 > .title {
     position: absolute;
-    top: 11px;
-    left: 27px;
+    top: 26px;
+    left: 33px;
     font-size: 19px;
     color: #CDECFF;
     font-weight: bold; }
 
 .chart2 {
-  height: 299px;
+  height: 319px;
   width: 310px;
-  background: rgba(12, 25, 45, 0.7);
-  padding: 10px;
+  padding: 20px 10px 20px 10px;
   box-sizing: border-box;
+  background-image: url(../images/Rectangle3.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
   position: absolute;
   top: 53%;
   left: 3%; }
-  .chart2 > #chart1 {
+  .chart2 > div.chart {
     height: 100%;
     width: 100%; }
   .chart2 > .title {
     position: absolute;
-    top: 11px;
-    left: 27px;
+    top: 26px;
+    left: 33px;
     font-size: 19px;
     color: #CDECFF;
     font-weight: bold; }
 
 .chart3 {
-  height: 299px;
+  height: 319px;
   width: 310px;
-  background: rgba(12, 25, 45, 0.7);
-  padding: 10px;
+  padding: 20px 10px 20px 10px;
   box-sizing: border-box;
+  background-image: url(../images/Rectangle3.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
   position: absolute;
   top: 10%;
   left: 77%; }
-  .chart3 > #chart1 {
+  .chart3 > div.chart {
     height: 100%;
     width: 100%; }
   .chart3 > .title {
     position: absolute;
-    top: 11px;
-    left: 27px;
+    top: 26px;
+    left: 33px;
     font-size: 19px;
     color: #CDECFF;
     font-weight: bold; }
 
 .chart4 {
-  height: 299px;
+  height: 319px;
   width: 310px;
-  background: rgba(12, 25, 45, 0.7);
-  padding: 10px;
+  padding: 20px 10px 20px 10px;
   box-sizing: border-box;
+  background-image: url(../images/Rectangle3.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
   position: absolute;
   top: 53%;
   left: 77%; }
-  .chart4 > #chart1 {
+  .chart4 > div.chart {
     height: 100%;
     width: 100%; }
   .chart4 > .title {
     position: absolute;
-    top: 11px;
-    left: 27px;
+    top: 26px;
+    left: 33px;
     font-size: 19px;
     color: #CDECFF;
     font-weight: bold; }
+
+#chart4 {
+  height: 229px; }
+
+#chart4table {
+  margin-top: 30px;
+  margin-left: calc(50% - 138px);
+  table-layout: fixed;
+  width: 276px;
+  height: 222px;
+  border-spacing: 0;
+  padding-top: 10px; }
+  #chart4table tr {
+    height: 37px;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: rgba(24, 46, 70, 0.8); }
+  #chart4table > thead > tr > th {
+    width: 34%;
+    text-align: center; }
+  #chart4table > tbody {
+    height: 185px;
+    width: 276px;
+    overflow: auto;
+    display: block; }
+    #chart4table > tbody::-webkit-scrollbar {
+      width: 8px;
+      height: 14px;
+      background-color: rgba(85, 103, 126, 0.5);
+      border-radius: 10px; }
+    #chart4table > tbody::-webkit-scrollbar-thumb {
+      background-color: #55677e;
+      border-radius: 10px; }
+    #chart4table > tbody > tr {
+      width: 100%;
+      height: 32px;
+      line-height: 32px;
+      display: flex;
+      margin: 10px 0px; }
+      #chart4table > tbody > tr td {
+        flex: 1;
+        height: 32px;
+        text-align: center;
+        float: left;
+        overflow: hidden;
+        padding: 0; }
 
 /*# sourceMappingURL=template.css.map */

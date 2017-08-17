@@ -200,8 +200,8 @@
 }
 
 .parttwo {
-    top: calc(30% - -6px);
-    left: calc(50% + 47px);
+    top: calc(30% - 13px);
+    left: calc(50% + 25px);
     transform: rotateX(-17deg) rotateY(-2deg) rotateZ(180deg);
 }
 
@@ -233,4 +233,30 @@
     top: 44%;
     left: 35%;
     transform: rotateX(0deg) rotateY(5deg) rotateZ(200deg);
+}
+
+@media screen and (min-width:1462) and (min-height:838px){
+    body{
+        position: fixed;
+        top:0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+}
+
+@media screen and (max-width:1462){
+    body{
+        position: relative;
+        min-height: 838px;
+        min-width: 1462px;
+    }
+}
+
+@media screen and (max-height:838px){
+    body{
+        position: relative;
+        min-height: 838px;
+        min-width: 1462px;
+    }
 }
