@@ -21,7 +21,7 @@ var index = {
     loadchart: function () {
         var self = this;
         //load chart 1
-        var chart1_url = "./data1.json";
+        var chart1_url = Config.index.chart1;
         var chart1_param = {};
         $.get(chart1_url, chart1_param, function (data) {
             self.loadpiechart("chart1", data, {
@@ -35,7 +35,7 @@ var index = {
             })
         }, "json");
         //load chart 2
-        var chart2_url = "./data1.json";
+        var chart2_url = Config.index.chart1;
         var chart2_param = {};
         $.get(chart2_url, chart1_param, function (data) {
             self.loadpiechart("chart2", data, {
@@ -48,11 +48,18 @@ var index = {
                 }
             })
         }, "json");
-        //load chart 2
-        var chart3_url = "./data2.json";
+        //load chart 3
+        var chart3_url = Config.index.chart2;
         var chart3_param = {};
         $.get(chart3_url, chart3_param, function (data) {
             self.loadbarchart("chart3", data);
+        }, "json");
+
+        //load table
+        var chart3_url = Config.index.chart3;
+        var chart3_param = {};
+        $.get(chart3_url, chart3_param, function (data) {
+            self.loadTable(data);
         }, "json");
     },
     loadpiechart: function (id, data, poptions) {
@@ -192,5 +199,35 @@ var index = {
             ]
         };
         $("#" + id).data("table").setOption(option);
+    },
+    loadTable: function (data) {
+        var self = this;
+        var tbody = "";
+        if (data.length > 0) {
+            data.map(function (v, index) {
+                tbody += "<tr>"
+                tbody += "<td>" + (index + 1) + "</td>";
+                tbody += "<td>" + v.name + "</td>";
+                if (v.continutimes > 0) {
+                    tbody += "<td>" + self.getWinType(v.continutimes) + "</td>";
+                }else{
+                    tbody += "<td></td>";
+                }
+                tbody += "</tr>"
+            });
+        }
+        document.getElementById("chart4table").getElementsByTagName("tbody")[0].innerHTML = tbody;
+    },
+    getWinType: function (num) {
+        switch (num) {
+            case 1:
+                return "<img src='./images/win.png' />";
+            case 2:
+                return "<img src='./images/win2.png' />";
+            case 3:
+                return "<img src='./images/win3.png' />";
+            default:
+                return ""
+        }
     }
 }
