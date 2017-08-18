@@ -35,10 +35,20 @@ var index = {
             })
         }, "json");
         //load chart 2
-        var chart2_url = Config.index.chart1;
+        var chart2_url = Config.index.chart2;
         var chart2_param = {};
         $.get(chart2_url, chart1_param, function (data) {
-            self.loadpiechart("chart2", data, {
+            var _data = [{
+                name: "已完成",
+                value: data.completedCount
+            }, {
+                name: "未完成",
+                value: data.nocompleteCount
+            }, {
+                name: "未开始",
+                value: data.nobeginCount
+            }];
+            self.loadpiechart("chart2", _data, {
                 color: ["#00C89D", "#FF5A5D", "#F1BE00"],
                 title: {
                     text: '厅直整体指标完成进度'
@@ -49,14 +59,23 @@ var index = {
             })
         }, "json");
         //load chart 3
-        var chart3_url = Config.index.chart2;
+        var chart3_url = Config.index.chart3;
         var chart3_param = {};
         $.get(chart3_url, chart3_param, function (data) {
-            self.loadbarchart("chart3", data);
+            var _data = [];
+            if (data.length > 0) {
+                data.map(function (v) {
+                    _data.push({
+                        name: v.ST_DEPT_NAME,
+                        value: v.tscore
+                    })
+                });
+            }
+            self.loadbarchart("chart3", _data);
         }, "json");
 
         //load table
-        var chart3_url = Config.index.chart3;
+        var chart3_url = Config.index.chart4;
         var chart3_param = {};
         $.get(chart3_url, chart3_param, function (data) {
             self.loadTable(data);
@@ -210,7 +229,7 @@ var index = {
                 tbody += "<td>" + v.name + "</td>";
                 if (v.continutimes > 0) {
                     tbody += "<td>" + self.getWinType(v.continutimes) + "</td>";
-                }else{
+                } else {
                     tbody += "<td></td>";
                 }
                 tbody += "</tr>"
