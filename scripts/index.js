@@ -174,16 +174,16 @@ var index = {
             return v.name
         });
         var option = {
-            title: {
-                text: '盟市考核排名',
-                x: 'center',
-                textStyle: {
-                    color: "#41B8F4",
-                    fontWeight: 'bold',
-                    fontSize: 16
-                },
-                top: 25
-            },
+            // title: {
+            //     text: '盟市考核排名',
+            //     x: 'left',
+            //     textStyle: {
+            //         color: "#41B8F4",
+            //         fontWeight: 'bold',
+            //         fontSize: 16
+            //     },
+            //     top: 25
+            // },
             tooltip: {
                 trigger: 'axis',
                 axisPointer: {
