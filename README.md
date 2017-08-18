@@ -6,3 +6,7 @@ index.html
 scripts/
 styles/
 images/
+
+sass compile:
+
+sass ./sass/tempalate.scss ./style/template.css
