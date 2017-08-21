@@ -1,14 +1,15 @@
-$(function () {
-    var index = window.index;
-    index.init();
-});
 
 var index = {
+    clear: function () {
+        $("div.body>.container").show();
+        this.initchart("chart1","迎上指标完成进度");
+        this.initchart("chart2","厅直整体指标完成进度");
+        this.initchart("chart3","盟市考核排名");
+        this.initTable();
+    },
     init: function () {
+        this.clear();
         //init planet state
-        $(".planet").click(function () {
-            $(this).toggleClass("focus");
-        });
         var mychart = echarts.init(document.getElementById("chart1"));
         $("#chart1").data("table", mychart);
         var mychart2 = echarts.init(document.getElementById("chart2"));
@@ -17,6 +18,31 @@ var index = {
         $("#chart3").data("table", mychart3);
         //init
         this.loadchart();
+    },
+    initchart: function (id, title) {
+        $("." + id).empty();
+        var chart = '<div class="title">' + title + '</div>\
+        <div id="'+ id + '" class="chart">\
+        </div>';
+        document.getElementsByClassName(id)[0].innerHTML = chart;
+    },
+    initTable: function () {
+        $(".chart4").empty();
+        var chart4 = '<div class="title">优秀人员名单</div>\
+        <div id="chart4" class="chart">\
+            <table id="chart4table">\
+                <thead>\
+                    <tr>\
+                        <th>序号</th>\
+                        <th>姓名</th>\
+                        <th>连续优秀</th>\
+                    </tr>\
+                </thead>\
+                <tbody>\
+                </tbody>\
+            </table>\
+        </div>';
+        document.getElementsByClassName("chart4")[0].innerHTML = chart4;
     },
     loadchart: function () {
         var self = this;
@@ -37,7 +63,7 @@ var index = {
         //load chart 2
         var chart2_url = Config.index.chart2;
         var chart2_param = {};
-        $.get(chart2_url, chart1_param, function (data) {
+        $.get(chart2_url, chart2_param, function (data) {
             var _data = [{
                 name: "已完成",
                 value: data.completedCount
