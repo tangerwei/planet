@@ -57,6 +57,12 @@ var tingzhi = {
                 window.location.href = Config.Host_Table_Path + "?index=" + params.dataIndex + "&page=tingzhi";
             })
         });
+        //load chart4
+        var chart4_url = Config.tingzhi.chart4;
+        var chart4_param = {};
+        $.get(chart4_url, chart4_param, function (data) {
+            self.loadchart4(data);
+        });
     },
     loadpiechart: function (id, data, poptions) {
         // formatter data
@@ -294,11 +300,89 @@ var tingzhi = {
         };
         $("#chart3").data("table").setOption(option);
     },
+    loadchart4:function(data){
+        var label = data.map(function(v){
+            return v.name;
+        });
+        var values = data.map(function(v){
+            return v.value;
+        });
+        var end = 100;
+        //computed end
+        if (values.length > 8) {
+            end = Math.floor(8 / values.length * 100);
+        }
+        var option = {
+            color:["rgb(0,200,157)"],
+            title: {
+                text: "指标完成趋势分析",
+                x: 'center',
+                textStyle: {
+                    color: "#41B8F4",
+                    fontWeight: 'bold',
+                    fontSize: 16
+                },
+                top: 20
+            },
+            dataZoom: [
+                {
+                    type: "slider",
+                    start: 1,
+                    end: end,
+                    filterMode: "empty",
+                    showDetail: false,
+                    zoomLock: true,
+                    height: 10,
+                    bottom: 55,
+                    backgroundColor: "rgba(85, 103, 126, 0.5)",
+                    fillerColor: "rgb(85,103,126)"
+                }
+            ],
+            tooltip: {
+                trigger: 'axis'
+            },
+            legend: {
+                data:['指标完成数量'],
+                orient: 'horizontal',
+                x: "center",
+                textStyle: {
+                    color: "#fff"
+                },
+                bottom: 10
+            },
+            xAxis:  {
+                type: 'category',
+                boundaryGap: false,
+                data: label,
+                axisLabel: { textStyle: { color: "#41B8F4" } }
+            },
+            yAxis: {
+                type: 'value',
+                axisLabel: {
+                    formatter: '{value} °C'
+                },
+                splitLine:{show:false},
+                axisLabel: { textStyle: { color: "#41B8F4" } }
+            },
+            series: [
+                {
+                    name:'指标完成数量',
+                    type:'line',
+                    symbol:"circle",
+                    symbolSize:10,
+                    data:values
+                }
+            ]
+        };
+        $("#chart4").data("table").setOption(option);
+    },
     clear: function () {
         this.initchart("chart1", "整体指标完成进度");
         this.initchart("chart2", "考核得分情况");
         this.initchart("chart3", "各部门执行情况");
         this.initchart("chart4", "指标完成趋势分析");
+        $("#chart4").css("height","calc(100% - 10px)");
+        $("#chart4").css("marginTop","15px");
     },
     initchart: function (id, title) {
         $("." + id).empty();

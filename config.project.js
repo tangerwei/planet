@@ -21,6 +21,7 @@ var Config = {
         var tingzhi = {
             chart2:Host + "/data4.json",
             chart3:Host + "/data5.json",
+            chart4:Host + "/data4.json",
             //table url
             table:"sddddd"
         }
